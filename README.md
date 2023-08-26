@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: lainNao/branch-script-diff-check@v1.0.3
+      - uses: lainNao/branch-script-diff-check@v1
         id: compare
         with:
           compared-branch-name: ${{ github.event.pull_request.base.ref }} # edit this value if you want

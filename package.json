@@ -17,7 +17,9 @@
     "---------------------util(tag)--------------------": "",
     "_dev:tag:patch": "npm version patch && git push --tags",
     "_dev:tag:minor": "npm version minor && git push --tags",
-    "_dev:tag:major": "npm version major && git push --tags"
+    "_dev:tag:major": "npm version major && git push --tags",
+    "---------------------util(tag for v1)--------------------": "",
+    "_dev:tag:update-v1": "git tag -d v1 && git push origin :refs/tags/v1 && git tag v1 && git push --tags"
   },
   "repository": {
     "type": "git",
