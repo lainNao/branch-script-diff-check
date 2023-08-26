@@ -1,6 +1,6 @@
 # lainNao/branch-script-diff-check
 
-GitHub actions for comparing shell Script results across two branches
+GitHub actions for comparing shell script results across two branches
 
 ## Usage
 
