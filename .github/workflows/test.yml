@@ -23,7 +23,7 @@ jobs:
       - uses: ./
         id: compare
         with:
-          compared-branch-name: ${{ github.event.pull_request.base.ref || 'develop' }}
+          compared-branch-name: ${{ github.event.pull_request.base.ref || 'main' }}
           compared-script: ls
       - name: run if compare result is same
         if: steps.compare.outputs.isResultSame == 'true'
