@@ -1,6 +1,6 @@
 {
   "name": "branch-script-diff-check",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "private": true,
   "description": "GitHub Actions for Comparing Shell Script Results Across Two Branches",
   "main": "lib/main.js",
@@ -12,7 +12,14 @@
     "package": "ncc build --source-map --license licenses.txt",
     "test": "jest",
     "all": "npm run build && npm run format && npm run lint && npm run package && npm test",
-    "_dev:upload": "npm run build && npm run package && git add . && git commit -m 'chore' && git push"
+    "-----------------------util-----------------------": "",
+    "_dev:upload": "npm run build && npm run package && git add . && git commit -m 'chore' && git push",
+    "---------------------util(tag)--------------------": "",
+    "_dev:tag:patch": "npm version patch && git push --tags",
+    "_dev:tag:minor": "npm version minor && git push --tags",
+    "_dev:tag:major": "npm version major && git push --tags",
+    "---------------------util(tag for v1)--------------------": "",
+    "_dev:tag:update-v1": "git tag -d v1 && git push origin :refs/tags/v1 && git tag v1 && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -20,10 +27,10 @@
   },
   "keywords": [
     "actions",
-    "node",
-    "setup"
+    "diff",
+    "ci"
   ],
-  "author": "",
+  "author": "lainNao",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.10.0"
