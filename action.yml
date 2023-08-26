@@ -1,6 +1,7 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'branch-script-diff-check'
+description: 'compare shell Script results across two branches'
+author: 'lainNao'
+
 inputs:
   compared-branch-name:
     required: true
@@ -8,9 +9,11 @@ inputs:
   compared-script:
     required: true
     description: 'The script to run to compare the branches'
+
 outputs:
   isResultSame:
     description: 'Whether the result of the script is the same'
+
 runs:
   using: 'node16'
   main: 'dist/index.js'
