@@ -1,6 +1,9 @@
 name: 'branch-script-diff-check'
 description: 'compare shell Script results across two branches'
 author: 'lainNao'
+branding:
+  icon: 'git-branch'
+  color: 'blue'
 
 inputs:
   compared-branch-name:
