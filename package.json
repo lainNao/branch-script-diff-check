@@ -1,6 +1,6 @@
 {
   "name": "branch-script-diff-check",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "description": "GitHub Actions for Comparing Shell Script Results Across Two Branches",
   "main": "lib/main.js",
