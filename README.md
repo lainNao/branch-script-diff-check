@@ -1,4 +1,4 @@
-# @lainNao/branch-script-diff-check
+# lainNao/branch-script-diff-check
 
 GitHub actions for comparing shell Script results across two branches
 
@@ -7,7 +7,7 @@ GitHub actions for comparing shell Script results across two branches
 ```yml
 name: 'test'
 
-on: # rebuild any PRs and main branch changes
+on:
   pull_request:
 
 jobs:
@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: lainNao/branch-script-diff-check@main
+      - uses: lainNao/branch-script-diff-check@v1.0.3
         id: compare
         with:
-          compared-branch-name: ${{ github.event.pull_request.base.ref }}
-          compared-script: ls
+          compared-branch-name: ${{ github.event.pull_request.base.ref }} # edit this value if you want
+          compared-script: ls # edit this shell script as you like
       - name: run if compare result is same
         if: steps.compare.outputs.isResultSame == 'true'
         run: echo "ls result is same!"
