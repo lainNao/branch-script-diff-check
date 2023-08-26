@@ -1,0 +1,25 @@
+name: 'test-released'
+
+on: # rebuild any PRs and main branch changes
+  pull_request:
+  push:
+    branches:
+      - main
+      - 'releases/*'
+
+jobs:
+  test-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: lainNao/branch-script-diff-check@v1.0.3
+        id: compare
+        with:
+          compared-branch-name: ${{ github.event.pull_request.base.ref || 'main' }}
+          compared-script: ls
+      - name: run if compare result is same
+        if: steps.compare.outputs.isResultSame == 'true'
+        run: echo "同じだった"
+      - name: run if compare result is not same
+        if: steps.compare.outputs.isResultSame == 'false'
+        run: echo "違かった"
