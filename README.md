@@ -26,4 +26,8 @@ jobs:
       - name: run if compare result is not same
         if: steps.compare.outputs.isResultSame == 'false'
         run: echo "ls result is not same!"
+      - name: echo current branch result
+        run: echo ${{ steps.compare.outputs.currentBranchResult }}
+      - name: echo compared branch result
+        run: echo ${{ steps.compare.outputs.comparedBranchResult }}
 ```

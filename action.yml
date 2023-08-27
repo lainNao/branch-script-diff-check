@@ -16,6 +16,10 @@ inputs:
 outputs:
   isResultSame:
     description: 'Whether the result of the script is the same'
+  currentBranchResult:
+    description: 'The result of the script on the current branch'
+  comparedBranchResult:
+    description: 'The result of the script on the compared branch'
 
 runs:
   using: 'node16'
