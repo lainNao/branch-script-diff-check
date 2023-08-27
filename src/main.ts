@@ -58,15 +58,15 @@ async function run(): Promise<void> {
         2
       )
     )
-    const output_isResultSame = currentBranchResult === comparedBranchResult
-    core.setOutput('isResultSame', output_isResultSame.toString())
-    core.setOutput('currentBranchResult', currentBranchResult)
-    core.setOutput('comparedBranchResult', comparedBranchResult)
+    const isResultSame = currentBranchResult === comparedBranchResult
+    core.setOutput('isResultSame', isResultSame.toString())
+    core.setOutput('currentBranchResult', `"${currentBranchResult}"`)
+    core.setOutput('comparedBranchResult', `"${comparedBranchResult}"`)
     core.info('\n[output]')
     core.info(
       JSON.stringify(
         {
-          isResultSame: output_isResultSame.toString(),
+          isResultSame: isResultSame.toString(),
           currentBranchResult,
           comparedBranchResult
         },
