@@ -37,7 +37,7 @@ jobs:
 
 ## Use case
 
-- By using isResultSame:
+- By using `isResultSame`:
   - you can run step if some script (like git command, node command, etc) result has changed.
-- By using currentBranchResult, comparedBranchResult:
+- By using `currentBranchResult`, `comparedBranchResult`:
   - you can run step if some script result has changed from A to B, 0 to 1, false to true, etc. Based on the script you provide, any changes can be compared.
